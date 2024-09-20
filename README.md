@@ -1,8 +1,3 @@
-# React + Vite
+# My Zendo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+My Zendo is a task management application designed to help users stay organized and focused. Built with React and powered by Appwrite, My Zendo enables users to sign up for an account, create personalized categories, and manage tasks efficiently within each category. With the addition of progress bars for each category, users can easily track their task completion and stay motivated. The app offers a clear overview of all tasks, as well as a dedicated view for today's tasks, helping users prioritize and maintain productivity. My Zendo simplifies task management, bringing balance and clarity to your daily routine.
