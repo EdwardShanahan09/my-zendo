@@ -1,11 +1,9 @@
+import AppRoutes from "./pages/Routes/AppRoutes";
+
 const App = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline text-primary">
-        Hello world!
-      </h1>
-
-      <p>Hello </p>
+      <AppRoutes />
     </div>
   );
 };
