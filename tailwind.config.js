@@ -11,7 +11,7 @@ export default {
         primary: "#7DBCC2",
         secondary: "#FCFCFC",
         accent: "#FFB5A7",
-        text: "#3C3C3C",
+        dark: "#3C3C3C",
         highlight: "#CFF1E3",
       },
     },
