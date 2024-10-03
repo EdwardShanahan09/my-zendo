@@ -1,27 +1,31 @@
 import Logo from "../../assets/icons/logo.svg";
 import IconProfile from "../../assets/icons/icon-profile.svg";
-import Button from "../Button/Button";
 
 const Navbar = () => {
   return (
     <nav className="px-6 py-4 flex justify-between items-center">
       <img
-        width={30}
+        className="w-[30px] md:w-[40px]"
         src={Logo}
         alt="Created by archer7 from the Noun Project"
       />
 
       <img
-        className="md:hidden"
-        width={30}
+        className="md:hidden w-[25px]"
         src={IconProfile}
         alt="Created by NAPISAH from Noun Project"
       />
 
-      <div className="hidden md:block">
-        <Button varient="outline" size="small" className="mr-4" text="Login" />
-        <Button varient="solid" size="small" text="Sign Up" />
-      </div>
+      <ul className="hidden md:flex ">
+        <li className="mr-4">
+          <a className="text-dark hover:text-primary" href="#">
+            Login
+          </a>
+        </li>
+        <a className="text-dark hover:text-primary" href="#">
+          Sign Up
+        </a>
+      </ul>
     </nav>
   );
 };
