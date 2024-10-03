@@ -3,7 +3,7 @@ import IconProfile from "../../assets/icons/icon-profile.svg";
 
 const Navbar = () => {
   return (
-    <nav className="px-6 py-4 flex justify-between items-center">
+    <nav className="px-6 py-4 flex justify-between items-center mb-6">
       <img
         className="w-[30px] md:w-[40px]"
         src={Logo}

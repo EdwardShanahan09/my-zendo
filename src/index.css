@@ -11,12 +11,12 @@
   h4,
   h5,
   h6 {
-    @apply font-headings font-bold;
+    @apply font-headings font-bold text-dark;
   }
 }
 
 @layer base {
   body {
-    @apply font-text;
+    @apply font-text text-dark;
   }
 }
