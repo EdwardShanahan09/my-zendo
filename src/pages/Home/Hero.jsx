@@ -3,9 +3,9 @@ import Button from "../../components/Button/Button";
 
 const Hero = () => {
   return (
-    <section className="px-6 md:flex items-center justify-between">
+    <section className="px-4 md:px-6 lg:px-16 md:flex items-center justify-between mb-12">
       <div className="mb-6">
-        <h1 className="text-xl md:text-2xl lg:text-4xl font-headings mb-4 md:mb-6">
+        <h1 className="text-2xl md:text-3xl lg:text-5xl font-headings mb-4 md:mb-6">
           Bring Clarity to Your Day.
         </h1>
 
@@ -17,9 +17,12 @@ const Hero = () => {
 
         <Button text="Begin Your Journey" />
       </div>
-
       <div>
-        <img src={HeroImage} alt="Mediating by desk" />
+        <img
+          className="w-full max-w-[200px] md:max-w-[300px] lg:max-w-[500px] mx-auto md:mx-0"
+          src={HeroImage}
+          alt="Mediating by desk"
+        />
       </div>
     </section>
   );
