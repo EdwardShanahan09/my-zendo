@@ -49,7 +49,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="text-center py-10 bg-gray-50">
+    <section className="text-center py-10 bg-gray-50 mb-12">
       <h2 className="text-xl md:text-2xl lg:text-3xl font-headings mb-4 md:mb-6">
         Experiences of Clarity
       </h2>
