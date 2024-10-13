@@ -7,16 +7,16 @@ import CTA from "./CTA";
 const Home = () => {
   return (
     <>
-      <Section>
+      <Section classes="md:flex items-center justify-between">
         <Hero />
       </Section>
       <Section>
         <Features />
       </Section>
-      <Section>
+      <Section classes="text-center">
         <Testimonials />
       </Section>
-      <Section>
+      <Section classes="md:flex items-center justify-between mb-12">
         <CTA />
       </Section>
     </>

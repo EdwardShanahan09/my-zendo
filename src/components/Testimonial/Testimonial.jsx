@@ -6,10 +6,9 @@ const Testimonial = ({ image, text, name, occupation }) => {
         alt={name}
         className="w-16 h-16 mb-4 rounded-full object-cover"
       />
-      <p className="text-lg italic text-gray-700 mb-4">"{text}"</p>
-      <p className="font-semibold text-gray-900">
-        - <span>{name}</span>,{" "}
-        <span className="text-gray-600">{occupation}</span>
+      <p className="italic mb-4">"{text}"</p>
+      <p className="font-semibold">
+        - <span>{name}</span>, <span>{occupation}</span>
       </p>
     </div>
   );

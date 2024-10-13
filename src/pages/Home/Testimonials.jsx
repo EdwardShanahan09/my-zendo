@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Avatar1 from "../../assets/icons/testimonial-1.svg";
 import Avatar2 from "../../assets/icons/testimonial-2.svg";
 import Testimonial from "../../components/Testimonial/Testimonial";
+import Section from "../../components/Section/Section";
 
 const testimonialList = [
   {
@@ -49,10 +50,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="text-center py-10 bg-gray-50 mb-12">
-      <h2 className="text-xl md:text-2xl lg:text-3xl font-headings mb-4 md:mb-6">
-        Experiences of Clarity
-      </h2>
+    <>
+      <h2>Experiences of Clarity</h2>
 
       <div
         className={`transition-opacity duration-500 ${
@@ -80,7 +79,7 @@ const Testimonials = () => {
           ></span>
         ))}
       </div>
-    </section>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import Button from "../../components/Button/Button";
 
 const Hero = () => {
   return (
-    <section className="px-4 md:px-6 lg:px-16 md:flex items-center justify-between mb-12">
+    <>
       <div className="mb-6">
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-headings mb-4 md:mb-6">
           Bring Clarity to Your Day.
@@ -19,12 +19,12 @@ const Hero = () => {
       </div>
       <div>
         <img
-          className="w-full max-w-[200px] md:max-w-[300px] lg:max-w-[500px] mx-auto md:mx-0"
+          className="w-full max-w-[200px] md:max-w-[300px] lg:max-w-[500px] "
           src={HeroImage}
           alt="Mediating by desk"
         />
       </div>
-    </section>
+    </>
   );
 };
 

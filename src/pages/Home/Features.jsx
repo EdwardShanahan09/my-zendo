@@ -1,3 +1,4 @@
+import Section from "../../components/Section/Section";
 import Feature from "../../components/Feature/Feature";
 import Feature1 from "../../assets/images/feature-1.svg";
 import Feature2 from "../../assets/images/feature-2.svg";
@@ -29,12 +30,10 @@ const featureList = [
 
 const Features = () => {
   return (
-    <section className="px-4 md:px-6 lg:px-16 mb-12">
-      <div className="text-center mb-10">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-headings mb-4 md:mb-6">
-          Find Calm in Your Workflow
-        </h2>
-        <p className="text-center text-sm md:text-base max-w-xs md:max-w-md lg:max-w-lg mb-4 md:mb-6 mx-auto">
+    <>
+      <div className="mb-10">
+        <h2>Find Calm in Your Workflow</h2>
+        <p className="md:max-w-md lg:max-w-lg md:mx-auto">
           With My Zendo, organizing your tasks becomes a calming experience.
           Categorize, prioritize, and focus on today’s goals with clarity and
           simplicity.
@@ -51,7 +50,7 @@ const Features = () => {
           />
         ))}
       </div>
-    </section>
+    </>
   );
 };
 

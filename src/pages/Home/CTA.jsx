@@ -3,13 +3,11 @@ import CTAImage from "../../assets/images/cta.svg";
 
 const CTA = () => {
   return (
-    <section className="px-4 md:px-6 lg:px-16 md:flex items-center justify-between mb-12">
-      <div className="md:order-2">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-headings mb-4 md:mb-6">
-          Ready to Create Your Own Zen Space?
-        </h2>
+    <>
+      <div className="mb-4 md:order-2">
+        <h2>Ready to Create Your Own Zen Space?</h2>
 
-        <p className="text-sm md:text-base max-w-xs md:max-w-md lg:max-w-lg mb-4 md:mb-6">
+        <p className="mb-4 md:max-w-md lg:max-w-lg">
           Sign up for My Zendo today and start your journey towards a calmer,
           more focused you.
         </p>
@@ -24,7 +22,7 @@ const CTA = () => {
           alt="Mediating by desk"
         />
       </div>
-    </section>
+    </>
   );
 };
 

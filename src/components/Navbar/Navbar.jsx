@@ -2,7 +2,7 @@ import Logo from "../../assets/icons/logo.svg";
 import IconProfile from "../../assets/icons/icon-profile.svg";
 const Navbar = () => {
   return (
-    <nav className="px-4 md:px-6 lg:px-16 py-4 flex justify-between items-center mb-10">
+    <nav className="px-4 md:px-6 lg:px-16 py-4 flex justify-between items-center mb-4">
       <img
         className="w-[30px] md:w-[40px]"
         src={Logo}
