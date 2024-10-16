@@ -4,7 +4,7 @@ import CTAImage from "../../assets/images/cta.svg";
 const CTA = () => {
   return (
     <>
-      <div className="mb-4 md:order-2">
+      <div className="mb-10 md:order-2">
         <h2>Ready to Create Your Own Zen Space?</h2>
 
         <p className="mb-4 md:max-w-md lg:max-w-lg">

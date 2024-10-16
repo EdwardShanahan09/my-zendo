@@ -4,7 +4,7 @@ import Button from "../../components/Button/Button";
 const Hero = () => {
   return (
     <>
-      <div className="mb-6">
+      <div className="mb-10">
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-headings mb-4 md:mb-6">
           Bring Clarity to Your Day.
         </h1>
@@ -19,7 +19,7 @@ const Hero = () => {
       </div>
       <div>
         <img
-          className="w-full max-w-[200px] md:max-w-[300px] lg:max-w-[500px] "
+          className="w-full max-w-[200px] md:max-w-[300px] lg:max-w-[400px] mx-auto"
           src={HeroImage}
           alt="Mediating by desk"
         />
