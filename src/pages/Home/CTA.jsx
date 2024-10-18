@@ -17,7 +17,7 @@ const CTA = () => {
 
       <div>
         <img
-          className="w-full max-w-[200px] md:max-w-[300px] lg:max-w-[500px] mx-auto md:mx-0"
+          className="w-full max-w-[200px] md:max-w-[250px] lg:max-w-[400px] mx-auto md:mx-0"
           src={CTAImage}
           alt="Mediating by desk"
         />

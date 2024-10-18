@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Avatar1 from "../../assets/icons/testimonial-1.svg";
 import Avatar2 from "../../assets/icons/testimonial-2.svg";
 import Testimonial from "../../components/Testimonial/Testimonial";
-import Section from "../../components/Section/Section";
 
 const testimonialList = [
   {

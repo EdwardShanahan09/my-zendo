@@ -19,7 +19,7 @@ const Hero = () => {
       </div>
       <div>
         <img
-          className="w-full max-w-[200px] md:max-w-[300px] lg:max-w-[400px] mx-auto"
+          className="w-full max-w-[200px] md:max-w-[250px] lg:max-w-[400px] mx-auto"
           src={HeroImage}
           alt="Mediating by desk"
         />

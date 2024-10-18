@@ -32,8 +32,9 @@ const Features = () => {
   return (
     <>
       <div className="mb-10">
-        <h2>Find Calm in Your Workflow</h2>
-        <p className="md:max-w-md lg:max-w-lg md:mx-auto">
+        <h2 className="md:text-center">Find Calm in Your Workflow</h2>
+
+        <p className="md:text-center md:max-w-md lg:max-w-lg md:mx-auto">
           With My Zendo, organizing your tasks becomes a calming experience.
           Categorize, prioritize, and focus on today’s goals with clarity and
           simplicity.
