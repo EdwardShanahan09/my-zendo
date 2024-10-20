@@ -1,4 +1,3 @@
-import Section from "../../components/Section/Section";
 import Feature from "../../components/Feature/Feature";
 import Feature1 from "../../assets/images/feature-1.svg";
 import Feature2 from "../../assets/images/feature-2.svg";
