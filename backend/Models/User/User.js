@@ -20,7 +20,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-// Hash the password before saving
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
     this.password = await bcrypt.hash(this.password, 10);
@@ -28,6 +27,15 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-const User = mongoose.model("User", userSchema);
+userSchema.methods.generateAuthToken = function () {
+  return JsonWebTokenError.sign({ userId: this._id }, process.env.JWT_Secret, {
+    expriesIn: "1h",
+  });
+};
 
+userSchema.methods.comparePassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+
+const User = mongoose.model("User", userSchema);
 module.exports = User;
