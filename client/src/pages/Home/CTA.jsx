@@ -12,7 +12,7 @@ const CTA = () => {
           more focused you.
         </p>
 
-        <Button text="Join Today" />
+        <Button url="auth/signup" text="Join Today" />
       </div>
 
       <div>

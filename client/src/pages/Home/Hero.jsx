@@ -15,7 +15,7 @@ const Hero = () => {
           life.
         </p>
 
-        <Button text="Begin Your Journey" />
+        <Button url="auth/signup" text="Begin Your Journey" />
       </div>
       <div>
         <img

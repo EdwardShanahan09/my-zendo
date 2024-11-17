@@ -10,11 +10,13 @@ const Navbar = () => {
         src={Logo}
         alt="Created by archer7 from the Noun Project"
       />
-      <img
-        className="md:hidden w-[25px]"
-        src={IconProfile}
-        alt="Created by NAPISAH from Noun Project"
-      />
+      <Link to="auth/signup">
+        <img
+          className="md:hidden w-[25px]"
+          src={IconProfile}
+          alt="Created by NAPISAH from Noun Project"
+        />
+      </Link>
       <ul className="hidden md:flex ">
         <li className="mr-4">
           <Link className="text-dark hover:text-primary" to="auth/login">
