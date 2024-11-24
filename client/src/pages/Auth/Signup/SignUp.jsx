@@ -1,21 +1,63 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Input from "../../../components/Input/Input";
 import Logo from "../../../assets/icons/logo.svg";
+import { UserContext } from "../../../context/User/UserContext";
 
 const Signup = () => {
+  const { login } = useContext(UserContext);
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (formData.password != formData.confirmPassword) {
+      setError("Passwords do not match!");
+      return;
+    }
+
+    if (formData.password.length < 8) {
+      setError("Password need to be more than 8 charectors long!");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5001/api/users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setSuccess(true);
+        setError(null);
+        login(data);
+
+        console.log(data);
+      } else {
+        setError(data.message || "Something went wrong.");
+      }
+    } catch (error) {
+      setError("Unable to sign up. Please try again later!");
+      console.log(error);
+    }
   };
   return (
     <div className="max-w-md mx-auto">
@@ -73,6 +115,9 @@ const Signup = () => {
           Sign Up
         </button>
       </form>
+      {error ? <p>{error}</p> : ""}
+
+      {success ? "Yeee" : ""}
     </div>
   );
 };
