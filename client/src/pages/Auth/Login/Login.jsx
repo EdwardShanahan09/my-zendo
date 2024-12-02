@@ -21,9 +21,9 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("", {
+      const response = await fetch("http://localhost:5001/api/users/login", {
         method: "POST",
-        header: {
+        headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
@@ -31,7 +31,7 @@ const Login = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        setError(errorData);
+        setError(errorData.message);
         return;
       }
 
