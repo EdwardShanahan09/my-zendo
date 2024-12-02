@@ -1,21 +1,47 @@
-import { useState } from "react";
-
+import { useContext, useState } from "react";
 import Input from "../../../components/Input/Input";
 import Logo from "../../../assets/icons/logo.svg";
+import { UserContext } from "../../../context/User/UserContext";
 
 const Login = () => {
+  const { login } = useContext(UserContext);
+  const [success, setSuccess] = useState(null);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
+  const [error, setError] = useState("");
+
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Handle login submission
+
+    try {
+      const response = await fetch("", {
+        method: "POST",
+        header: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setError(errorData);
+        return;
+      }
+
+      const data = await response.json();
+      login(data);
+      setSuccess(true);
+    } catch (error) {
+      setError("An error occurred while logging in. Please try again.");
+      console.log(error);
+    }
   };
 
   return (
@@ -56,6 +82,10 @@ const Login = () => {
           Log In
         </button>
       </form>
+
+      {error ? <p>{error}</p> : ""}
+
+      {success ? "Yeee" : ""}
     </div>
   );
 };
