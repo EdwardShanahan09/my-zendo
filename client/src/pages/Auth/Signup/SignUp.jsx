@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import Input from "../../../components/Input/Input";
 import Logo from "../../../assets/icons/logo.svg";
 import { UserContext } from "../../../context/User/UserContext";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const { login } = useContext(UserContext);
@@ -12,7 +13,6 @@ const Signup = () => {
     confirmPassword: "",
   });
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -46,7 +46,6 @@ const Signup = () => {
 
       const data = await response.json();
       if (response.ok) {
-        setSuccess(true);
         setError(null);
         login(data);
 
@@ -75,7 +74,7 @@ const Signup = () => {
           ease. Sign up below to begin your journey towards a more balanced day.
         </p>
       </div>
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-4">
         <Input
           label="Username"
           type="text"
@@ -115,9 +114,17 @@ const Signup = () => {
           Sign Up
         </button>
       </form>
-      {error ? <p>{error}</p> : ""}
 
-      {success ? "Yeee" : ""}
+      <p className="text-sm text-right">
+        Have an account?{" "}
+        <Link
+          to="/auth/login"
+          className="text-primary font-semibold hover:text-accent underline transition duration-200"
+        >
+          Login
+        </Link>
+      </p>
+      {error ? <p className="text-red-500 text-sm mt-2">{error}</p> : ""}
     </div>
   );
 };

@@ -2,10 +2,11 @@ import { useContext, useState } from "react";
 import Input from "../../../components/Input/Input";
 import Logo from "../../../assets/icons/logo.svg";
 import { UserContext } from "../../../context/User/UserContext";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { login } = useContext(UserContext);
-  const [success, setSuccess] = useState(null);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -37,7 +38,6 @@ const Login = () => {
 
       const data = await response.json();
       login(data);
-      setSuccess(true);
     } catch (error) {
       setError("An error occurred while logging in. Please try again.");
       console.log(error);
@@ -58,7 +58,7 @@ const Login = () => {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form className="mb-4" onSubmit={handleSubmit}>
         <Input
           label="Email"
           type="email"
@@ -83,9 +83,17 @@ const Login = () => {
         </button>
       </form>
 
-      {error ? <p>{error}</p> : ""}
+      <p className="text-sm text-right">
+        Don’t have an account?{" "}
+        <Link
+          to="/auth/signup"
+          className="text-primary font-semibold hover:text-accent underline transition duration-200"
+        >
+          Sign Up
+        </Link>
+      </p>
 
-      {success ? "Yeee" : ""}
+      {error ? <p className="text-red-500 text-sm mt-2">{error}</p> : ""}
     </div>
   );
 };
