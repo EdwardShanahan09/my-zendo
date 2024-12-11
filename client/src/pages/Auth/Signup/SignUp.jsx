@@ -1,10 +1,13 @@
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../../../components/Input/Input";
 import Logo from "../../../assets/icons/logo.svg";
 import { UserContext } from "../../../context/User/UserContext";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const { login } = useContext(UserContext);
   const [formData, setFormData] = useState({
     username: "",
@@ -48,8 +51,7 @@ const Signup = () => {
       if (response.ok) {
         setError(null);
         login(data);
-
-        console.log(data);
+        navigate("/dashboard");
       } else {
         setError(data.message || "Something went wrong.");
       }

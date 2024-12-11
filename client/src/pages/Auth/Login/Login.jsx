@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../../../components/Input/Input";
 import Logo from "../../../assets/icons/logo.svg";
 import { UserContext } from "../../../context/User/UserContext";
@@ -6,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   const { login } = useContext(UserContext);
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -38,6 +39,7 @@ const Login = () => {
 
       const data = await response.json();
       login(data);
+      navigate("navigate");
     } catch (error) {
       setError("An error occurred while logging in. Please try again.");
       console.log(error);
