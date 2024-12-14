@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
-
   const { login } = useContext(UserContext);
+
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -19,18 +19,20 @@ const Signup = () => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+    setError(null); // Clear any existing error when user starts typing
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (formData.password != formData.confirmPassword) {
+    // Client-side validation
+    if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match!");
       return;
     }
 
     if (formData.password.length < 8) {
-      setError("Password need to be more than 8 charectors long!");
+      setError("Password needs to be at least 8 characters long!");
       return;
     }
 
@@ -48,18 +50,26 @@ const Signup = () => {
       });
 
       const data = await response.json();
+
       if (response.ok) {
-        setError(null);
-        login(data);
+        // Store token and user info in localStorage
+        localStorage.setItem("token", data.data.token);
+        localStorage.setItem("user", JSON.stringify(data.data.user));
+
+        // Log in the user using context
+        login(data.data.user);
+
+        // Redirect to the dashboard
         navigate("/dashboard");
       } else {
         setError(data.message || "Something went wrong.");
       }
     } catch (error) {
-      setError("Unable to sign up. Please try again later!");
-      console.log(error);
+      setError("Unable to sign up. Please try again later.");
+      console.error(error);
     }
   };
+
   return (
     <div className="max-w-md mx-auto">
       <div className="mb-6">
@@ -126,7 +136,7 @@ const Signup = () => {
           Login
         </Link>
       </p>
-      {error ? <p className="text-red-500 text-sm mt-2">{error}</p> : ""}
+      {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
     </div>
   );
 };

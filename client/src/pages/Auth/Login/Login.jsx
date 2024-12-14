@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const { login } = useContext(UserContext);
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -33,16 +34,24 @@ const Login = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        setError(errorData.message);
+        setError(errorData.message || "Invalid login credentials.");
         return;
       }
 
       const data = await response.json();
-      login(data);
-      navigate("navigate");
+
+      // Store token and user info in localStorage
+      localStorage.setItem("token", data.data.token);
+      localStorage.setItem("user", JSON.stringify(data.data.user));
+
+      // Log in the user using context
+      login(data.data.user);
+
+      // Redirect to the dashboard
+      navigate("/dashboard");
     } catch (error) {
       setError("An error occurred while logging in. Please try again.");
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -95,7 +104,7 @@ const Login = () => {
         </Link>
       </p>
 
-      {error ? <p className="text-red-500 text-sm mt-2">{error}</p> : ""}
+      {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
     </div>
   );
 };
