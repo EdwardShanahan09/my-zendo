@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import IconProfile from "../../assets/icons/icon-nav-profile.svg";
 import IconToday from "../../assets/icons/icon-today.svg";
 import IconAll from "../../assets/icons/icon-all.svg";
@@ -19,26 +19,34 @@ const MobileNavbar = () => {
   return (
     <nav className="w-full bg-primary p-4 md:p-8">
       <ul className="flex justify-between content-center">
-        <img
-          className="w-6 md:w-8"
-          src={IconToday}
-          alt="Created by Maya Nurhayati from Noun Project"
-        />
-        <img
-          className="w-6 md:w-8"
-          src={IconAll}
-          alt="Created by AzizGdt from Noun Project"
-        />
-        <img
-          className="w-6 md:w-8"
-          src={IconCategory}
-          alt="Created by Fajri Akhmad from Noun Project"
-        />
-        <img
-          className="w-6 md:w-8"
-          src={IconProfile}
-          alt="Created by NAPISAH from Noun Project"
-        />
+        <Link to="today-todos">
+          <img
+            className="w-6 md:w-8"
+            src={IconToday}
+            alt="Created by Maya Nurhayati from Noun Project"
+          />
+        </Link>
+        <Link to="all-todos">
+          <img
+            className="w-6 md:w-8"
+            src={IconAll}
+            alt="Created by AzizGdt from Noun Project"
+          />
+        </Link>
+        <Link to="cetegories">
+          <img
+            className="w-6 md:w-8"
+            src={IconCategory}
+            alt="Created by Fajri Akhmad from Noun Project"
+          />
+        </Link>
+        <Link to="profile">
+          <img
+            className="w-6 md:w-8"
+            src={IconProfile}
+            alt="Created by NAPISAH from Noun Project"
+          />
+        </Link>
         <img
           className="w-6 md:w-8"
           src={IconLogout}

@@ -42,7 +42,7 @@ const SideNavbar = () => {
         </li>
 
         <li className="mb-4">
-          <Link className="flex" to="today-todos">
+          <Link className="flex" to="all-todoys">
             <img
               className="w-4 mr-2"
               src={IconAll}
@@ -54,7 +54,7 @@ const SideNavbar = () => {
         </li>
 
         <li className="mb-4">
-          <Link className="flex" to="today-todos">
+          <Link className="flex" to="categories">
             <img
               className="w-4 mr-2"
               src={IconCategory}
