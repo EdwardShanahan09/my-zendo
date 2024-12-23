@@ -7,6 +7,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import Home from "../Home/Home";
 import ProtectedRoute from "../Routes/ProtectedRoute";
 import PublicRoute from "../Routes/PublicRoute";
+import Profile from "../Dashboard/Profile";
 
 const AppRoutes = () => {
   return (
@@ -48,7 +49,9 @@ const AppRoutes = () => {
             <Dashboard />
           </ProtectedRoute>
         }
-      />
+      >
+        <Route path="/dashboard/profile" element={<Profile />} />
+      </Route>
     </Routes>
   );
 };

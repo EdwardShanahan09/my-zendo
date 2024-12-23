@@ -11,7 +11,9 @@ const Dashboard = () => {
       <div className="hidden lg:block">
         <SideNavbar />
       </div>
-      <div className="bg-black h-100">Content</div>
+      <div className="h-100">
+        <Outlet />
+      </div>
     </div>
   );
 };
