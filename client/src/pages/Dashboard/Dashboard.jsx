@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="lg:grid lg:grid-cols-[100px_1fr] lg:h-screen">
+    <div className="lg:grid lg:grid-cols-[150px_1fr] lg:h-screen">
       <div className=" lg:hidden fixed bottom-0 w-full">
         <MobileNavbar />
       </div>
