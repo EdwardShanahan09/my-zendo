@@ -11,7 +11,7 @@ const Dashboard = () => {
       <div className="hidden lg:block">
         <SideNavbar />
       </div>
-      <div className="h-100">
+      <div className="h-100 p-5">
         <Outlet />
       </div>
     </div>
